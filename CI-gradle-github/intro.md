@@ -1,9 +1,9 @@
-#Introduction
-Testing
-#Gradle for Automated testing & build
+# Introduction
 
-#GitHub actions for CI/CD pipeline
+# Gradle for Automated testing & build
 
-#What you will learn
+# GitHub actions for CI/CD pipeline
 
-#Prerequisities
+# What you will learn
+
+# Prerequisities
