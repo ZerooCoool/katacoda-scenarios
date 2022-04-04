@@ -1,14 +1,17 @@
 # Creating CI pipeline with Github Actions
-In order to create the experience of atomated testing we are going to set up a CI pipeline on github.
+In order to create the experience of automated testing we are going to set up a CI pipeline on github.
 
 ## Setting up the github Actions
 Setting up GitHub Actions is very simple. It uses a .yml file that describes the process for the github actions.
 
 The .yml file can be found under .github/workflows/gradle.yml,
 
-go to the file `/root/katacoda-code/.github/workflows/gradle.yml`{{open}}
+go to the file `katacoda-code/.github/workflows/gradle.yml`{{open}}
 
-We will initilize the file by adding on what github commands we will perform the process. In this case we want to perform a process (described later) on Pull Request to main and direct push to main.
+We will initilize the file by adding `on` tag which specifies what github events should trigger a process/workflow. In this case we want to perform a proccess (described later) on Pull Requests to main and for direct pushes to main.
+`runs-on` specifies which virtual machine to run on. Steps sets up the steps in a workflow, here we setup java JDK-18 and execute `gradle build` and `gradle test`.
+
+
 
 Lets add that,
 <pre class="file" data-filename="./katacoda-code/.github/workflows/gradle.yml" data-target="insert"  data-marker="# Add On Tag">

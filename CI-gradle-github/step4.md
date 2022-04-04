@@ -15,9 +15,9 @@ Go to the directory,
 `cd katacoda-code`{{execute}}
 
 ## Unit tests
-It can already be seen that a unit test was created for the initial app.
+We have already seen that a unit test was created for the initial app.
 
-Since there does not exist any functional logic in the application we will add a simple function called, simpleAddition in the main function.
+Since there does not exist any functional logic in the application we will add two functions. The first function simpleAddition will be added in the math1 file. The second function simpleMultiplication will be added in the math2 file.
 Lets do that!
 
 <pre class="file" data-filename="./katacoda-code/app/src/main/java/tutorial/MathOne.java" data-target="insert"  data-marker="// Create simple Java class here">
@@ -42,7 +42,8 @@ public class MathTwo{
 }
 </pre>
 
-Now lets add a unit test testing this functionality,
+Now lets add unit tests for testing this functionality,
+
 <pre class="file" data-filename="./katacoda-code/app/src/test/java/tutorial/AppTest.java" data-target="insert"  data-marker="// Add Unittest addition">
 @Test
 void simpleAdditionTest(){
@@ -68,7 +69,7 @@ Lets verify that everything is working and the tests are good.
 ## Add Integration test
 In this section we will perform a integration test where we will have two seperate classes with different functionality and test that their integration is working correctly. The main java application App.java will then integrate the functionalites in both of them.
 
-These classes could be in different modules or components in a real life project, however to simplify it in our demo we will create two classes.
+These classes could be in different modules or components in a real life project, however to simplify it in our demo we only have two classes.
 
 Lets create the functionality of integration,
 <pre class="file" data-filename="./katacoda-code/app/src/main/java/tutorial/App.java" data-target="insert"  data-marker="// Add Integration functionality">
