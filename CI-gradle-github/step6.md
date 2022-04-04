@@ -12,7 +12,7 @@ publishing {
   ...
 }
 </pre>
-script block in `katacoda-code/app/build.gradle`{{open}}.
+script block in `katacoda-code/app/build.gradle`{{open}} .
 
 
 # Maven Publication
