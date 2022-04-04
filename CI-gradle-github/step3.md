@@ -37,22 +37,19 @@ You should now see that new folders have been created. We will go through some o
 
 1. src/ - Contains the java application and the testNG for the project.
 
-2. build.gradle - This is a groovy file that contains important information about gradle.
+2. `newProject/build.gradle`{{open}} - This is a groovy file that contains important information about gradle.
 If we examine this file we will find the dependencies that this project has and how these dependencies are resolved (mavenCentral). We can also see information about the test plattform.
 
-`newProject/build.gradle`{{open}}
-
-3. Gradlew.bat and gradlew
-These are wrappers for Gradle for Windows or Linux/OS
+3. Gradlew.bat and gradlew - These are wrappers for Gradle for Windows or Linux/OS
 
 
 ## Running the tests and application
-Now in order to verify that everything is working, examine the javafile under src/main/java/tutorial/App.java
+Now in order to verify that everything is working, examine the javafile under `src/main/java/tutorial/App.java`{{open}}
 After that you should now see that this file will print a greeting if run, lets check it out by running it.
 
 `gradle run`{{execute}}
 
-Examine the test file which is located at src/test/java/tutorial/test,
+Examine the test file which is located at `src/test/java/tutorial/test`{{open}},
 Lets run the tests,
 
 `gradle test`{{execute}}
