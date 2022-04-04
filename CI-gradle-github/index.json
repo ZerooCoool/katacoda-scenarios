@@ -1,8 +1,8 @@
 {
   "title": "Continuous Testing and Integration using Gradle and Github Actions",
   "description": "Combining the test functionalities of Gradle with GitHub actions to setup a CI/CD pipeline.",
-  "difficulty": "Beginner",
-  "time": "60 minutes",
+  "difficulty": "Intermediate",
+  "time": "30-60 minutes",
   "details": {
     "steps": [
       {
@@ -10,19 +10,19 @@
         "text": "step1.md"
       },
       {
-        "title": "Step 2",
+        "title": "Step 2 - Introduction to GitHub actions",
         "text": "step2.md"
       },
       {
-        "title": "Step 3",
+        "title": "Step 3 - Using Gradle",
         "text": "step3.md"
       },
       {
-        "title": "Step 4",
+        "title": "Step 4 - Adding tests",
         "text": "step4.md"
       },
       {
-        "title": "Step 5",
+        "title": "Step 5 - Setting up CI pipeline with GitHub actions",
         "text": "step5.md"
       },
       {
