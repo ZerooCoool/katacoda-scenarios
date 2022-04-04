@@ -8,3 +8,7 @@ Visit https://www.katacoda.com/filipsannervik to view the profile and interactiv
 Visit https://www.katacoda.com/docs to learn more about creating Katacoda scenarios
 
 For examples, visit https://github.com/katacoda/scenario-example
+
+# Contributors
+Filip Sannervik (sannerv@kth.se)
+Kunal Bhatnagar (kunalb@kth.se)
