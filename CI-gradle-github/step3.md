@@ -13,6 +13,7 @@ Move to that enviroment.
 
 ## Crreating the project from the scratch
 In this section we will go thorugh how to setup a Java project with gradle.
+
 Run the following command,
 
 `gradle init`{{execute}}
@@ -27,7 +28,7 @@ Run the following command,
 
 6. Enter Default
 
-7. Enter tutorial - it is important that you enter precisly 'tutorial' for this tutorial
+7. Enter Default
 
 
 Note that these are the project setting we entered for this tutorial and can can be customized depending on the project that you want to use.
@@ -42,6 +43,8 @@ The App folder contains the java application and the testNG for the project.
 2. build.gradle
 This is a groovy file that contains important information about gradle.
 If we examine this file we will find the dependencies that this project has and how these dependencies are resolved (mavenCentral). We can also see information about the test plattform.
+
+`/root/newProject/build.gradle`{{open}}
 
 3. Gradlew.bat and gradlew
 These are wrappers for Gradle for Windows or Linux/OS

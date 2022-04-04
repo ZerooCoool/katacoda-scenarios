@@ -6,10 +6,12 @@ Setting up GitHub Actions is very simple. It uses a .yml file that describes the
 
 The .yml file can be found under .github/workflows/gradle.yml,
 
+go to the file `/root/katacoda-code/.github/workflows/gradle.yml`{{open}}
+
 We will initilize the file by adding on what github commands we will perform the process. In this case we want to perform a process (described later) on Pull Request to main and direct push to main.
 
 Lets add that,
-<pre class="file" data-filename="./katacoda-code/.github/workflows/gradle.yml" data-target="insert"  data-marker="# Add On Tag ">
+<pre class="file" data-filename="./katacoda-code/.github/workflows/gradle.yml" data-target="insert"  data-marker="# Add On Tag">
 on:
   push:
     branches: [ main ]
@@ -40,4 +42,4 @@ jobs:
       run: gradle test
 </pre>
 
-Done! You have now successfully created a Github Action.
+Done! You have now successfully created a Github Actions.
