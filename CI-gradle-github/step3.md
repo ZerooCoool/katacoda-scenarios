@@ -1,17 +1,15 @@
-# Setting up a project with Gradle
-
 
 ## Setting up the katakoda enviroment
 For this part of the tutorial we will set up the enviroment by the following commands,
 
-Run the following commands to create a new folder to create the enviroment.
+Run the following commands to create a new folder for the enviroment.
 `mkdir newProject`{{execute}}
 
 Move to that enviroment.
 `cd newProject`{{execute}}
 
 
-## Crreating the project from the scratch
+## Creating the project from the scratch
 In this section we will go thorugh how to setup a Java project with gradle.
 
 Run the following command,
@@ -35,16 +33,14 @@ Note that these are the project setting we entered for this tutorial and can can
 
 ## Verifyin the project creation
 
-You should now new folders being created. We will go through the some important ones.
+You should now see that new folders have been created. We will go through some of the important ones.
 
-1. src/
-The App folder contains the java application and the testNG for the project.
+1. src/ - Contains the java application and the testNG for the project.
 
-2. build.gradle
-This is a groovy file that contains important information about gradle.
+2. build.gradle - This is a groovy file that contains important information about gradle.
 If we examine this file we will find the dependencies that this project has and how these dependencies are resolved (mavenCentral). We can also see information about the test plattform.
 
-`/root/newProject/build.gradle`{{open}}
+`/build.gradle`{{open}}
 
 3. Gradlew.bat and gradlew
 These are wrappers for Gradle for Windows or Linux/OS

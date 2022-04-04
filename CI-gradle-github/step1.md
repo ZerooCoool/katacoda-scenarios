@@ -3,20 +3,21 @@ Gradle is a flexible cross-language open-source build automation tool. It is use
 
 # Installing Gradle
 Depending on your current system, there are different ways to download Gradle. The only prerequisity needed is Java SDK 8 or higher. To check if Java is installed you can enter:
-</br> `$ java -version`{{execute}}
+</br> `java -version`{{execute}}
 
 If you are on a system which has Brew installed you can easily install Gradle by doing:
-</br> `$ brew install Gradle`{{execute}}
+</br> `brew install Gradle`
 
 For other ways to install Gradle including manual installation follow the steps on [Installing Gradle](https://gradle.org/install/).
 
 To check if Gradle has been installed correctly you can run:
-</br> `$ gradle --version`{{execute}}
+</br> `gradle --version`{{execute}}
 
 # Basic Gradle Commands
 
-Some basic gradle commands are `init`, `run` and `test`.
+Some basic gradle commands are `init`, `run`, `build` and `test`.
 
 </br> `init` will create a new gradle project.
+</br> `build` will create a build of the project.
 </br> `test` will run the test task for all subprojects within the directory.
 </br> `run` will assemble the application and execute some script or binary.
