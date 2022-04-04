@@ -7,12 +7,14 @@ id 'maven-publish'
 </pre>
 
 The Maven Publish Plugin works with [MavenPublication](https://docs.gradle.org/current/dsl/org.gradle.api.publish.maven.MavenPublication.html) and [MavenArtifactRepository](https://docs.gradle.org/current/dsl/org.gradle.api.artifacts.repositories.MavenArtifactRepository.html) repositories. The plugin will create an extension of [PublishingExtension](https://docs.gradle.org/current/dsl/org.gradle.api.publish.PublishingExtension.html) which you can then configure in the
+
 <pre>
 publishing {
   ...
 }
 </pre>
-script block in `katacoda-code/app/build.gradle`{{open}} .
+
+script block in `katacoda-code/app/build.gradle`{{open}}
 
 
 # Maven Publication
