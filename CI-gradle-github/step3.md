@@ -40,7 +40,7 @@ You should now see that new folders have been created. We will go through some o
 2. build.gradle - This is a groovy file that contains important information about gradle.
 If we examine this file we will find the dependencies that this project has and how these dependencies are resolved (mavenCentral). We can also see information about the test plattform.
 
-`/build.gradle`{{open}}
+`newProject/build.gradle`{{open}}
 
 3. Gradlew.bat and gradlew
 These are wrappers for Gradle for Windows or Linux/OS
