@@ -59,6 +59,11 @@ void simpleMultiplicationTest(){
 }
 </pre>
 
+## Verify
+Lets verify that everything is working and the tests are good.
+
+`gradle test`{{execute}}
+
 
 ## Add Integration test
 In this section we will perform a integration test where we will have two seperate classes with different functionality and test that their integration is working correctly. The main java application App.java will then integrate the functionalites in both of them.
@@ -88,3 +93,5 @@ void simpleIntegrationTest(){
 Lets verify that everything is working and the tests are good.
 
 `gradle test`{{execute}}
+
+Note: sometimes Katakoda acts weirdly, remove the codes under section Add integration test and manually copy paste them into file and it should work fine!
