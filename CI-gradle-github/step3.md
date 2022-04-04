@@ -49,7 +49,7 @@ After that you should now see that this file will print a greeting if run, lets 
 
 `gradle run`{{execute}}
 
-Examine the test file which is located at `newProject/src/test/java/newProject/test`{{open}},
+Examine the test file which is located at `newProject/src/test/java/newProject/AppTest.java`{{open}},
 Lets run the tests,
 
 `gradle test`{{execute}}
