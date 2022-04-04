@@ -10,5 +10,5 @@ Visit https://www.katacoda.com/docs to learn more about creating Katacoda scenar
 For examples, visit https://github.com/katacoda/scenario-example
 
 # Contributors
-Filip Sannervik (sannerv@kth.se)
-Kunal Bhatnagar (kunalb@kth.se)
+* Filip Sannervik (sannerv@kth.se)
+* Kunal Bhatnagar (kunalb@kth.se)
