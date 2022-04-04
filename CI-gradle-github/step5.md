@@ -9,11 +9,35 @@ The .yml file can be found under .github/workflows/gradle.yml,
 We will initilize the file by adding on what github commands we will perform the process. In this case we want to perform a process (described later) on Pull Request to main and direct push to main.
 
 Lets add that,
-COMMAND: ADD ON: PUSH ETC
+<pre class="file" data-filename="./katacoda-code/.github/workflows/gradle.yml" data-target="insert"  data-marker="# Add On Tag ">
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+</pre>
+
 
 Now, lets create a job or a process to be executed if abovementioned tasks are performed. This is done under the Jobs section.
 We want to perform A build and test on github push and pull-request to main.
 Lets add it,
-COMMAND: ADD Jobs
+<pre class="file" data-filename="./katacoda-code/.github/workflows/gradle.yml" data-target="insert"  data-marker="# Add Jobs">
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Set up JDK 18
+      uses: actions/setup-java@v2
+      with:
+        java-version: '18'
+        distribution: 'temurin'
+    - name: Execute Build
+      run: gradle build
+    - name: Execute Tests
+      run: gradle test
+</pre>
 
 Done! You have now successfully created a Github Action.

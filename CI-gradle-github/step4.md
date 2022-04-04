@@ -9,7 +9,7 @@ To do this go back to the root of the enviroment by run the following commands,
 `cd `{{execute}}
 
 Clone the github repo to set up the enviroment, by running this command.
-`git clone git@github.com:Kubha99/katacoda-code.git`{{execute}}
+`git clone https://github.com/Kubha99/katacoda-code.git`{{execute}}
 
 Go to the directory,
 `cd katacoda-code`{{execute}}
