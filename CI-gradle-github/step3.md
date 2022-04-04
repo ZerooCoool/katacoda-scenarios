@@ -44,12 +44,12 @@ If we examine this file we will find the dependencies that this project has and 
 
 
 ## Running the tests and application
-Now in order to verify that everything is working, examine the javafile under `src/main/java/tutorial/App.java`{{open}}
+Now in order to verify that everything is working, examine the javafile under `newProject/src/main/java/newProject/App.java`{{open}}
 After that you should now see that this file will print a greeting if run, lets check it out by running it.
 
 `gradle run`{{execute}}
 
-Examine the test file which is located at `src/test/java/tutorial/test`{{open}},
+Examine the test file which is located at `newProject/src/test/java/newProject/test`{{open}},
 Lets run the tests,
 
 `gradle test`{{execute}}
