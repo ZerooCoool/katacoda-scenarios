@@ -22,10 +22,12 @@ on:
     branches: [ main ]
 </pre>
 
+To automatically trigger workflows we use the keyword 'on'. In this case it trigger a workflow (will be specified later) on the push and pull request to the main branch.
 
-Now, lets create a job or a process to be executed if abovementioned tasks are performed. This is done under the Jobs section.
+Now, lets specify the workflow to be triggered. This is done under the Jobs section.
 We want to perform A build and test on github push and pull-request to main.
 Lets add it,
+
 <pre class="file" data-filename="./katacoda-code/.github/workflows/gradle.yml" data-target="insert"  data-marker="# Add Jobs">
 jobs:
   build:
@@ -44,5 +46,9 @@ jobs:
     - name: Execute Tests
       run: gradle test
 </pre>
+
+In this we define a different jobs to be done, in this case build. For this jobs we define the steps and in the order that they need to be executed. We start by checking out the repository so that the workflow can access it. Then we set up JDK version 18 by using the setup command as well as specifying java-version and distribution. 
+
+Now comes the more interesting part. Here we do two important steps. Namely the Execute of Build and Tests. Since we are using gradle and we know we have a script specified for it. We simply want it to run the gradle build and gradle test commands in the terminal.
 
 Done! You have now successfully created a Github Actions.
