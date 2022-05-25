@@ -14,20 +14,24 @@
         "text": "step2.md"
       },
       {
-        "title": "Step 3 - Setting up a project with Gradle",
+        "title": "Step 3 - What are Integration and Unit tests?"
         "text": "step3.md"
       },
       {
-        "title": "Step 4 - Adding tests",
+        "title": "Step 4 - Setting up a project with Gradle",
         "text": "step4.md"
       },
       {
-        "title": "Step 5 - Setting up CI pipeline with GitHub actions",
+        "title": "Step 5 - Adding tests",
         "text": "step5.md"
       },
       {
-        "title": "Step 6 - Gradle Artifact to Maven Repository",
+        "title": "Step 6 - Setting up CI pipeline with GitHub actions",
         "text": "step6.md"
+      },
+      {
+        "title": "Step 7 - Gradle Artifact to Maven Repository",
+        "text": "step7.md"
       }
     ],
     "intro": {

@@ -1,98 +1,55 @@
-# Adding Unit tests and Integration tests
-Now that we have concluded the functionality of being able to run, build and test the code we are going to add a few more tests.
 
-## Setting up the enviroment
-In order to get best learning experience with Katacodas we need to reset the working enviroment for the oncomming assignments.
+## Setting up the katakoda enviroment
+For this part of the tutorial we will set up the enviroment by the following commands,
 
-To do this go back to the root of the enviroment by run the following commands,
+Run the following commands to create a new folder for the enviroment.
+`mkdir newProject`{{execute}}
 
-`cd `{{execute}}
+Move to that enviroment.
+`cd newProject`{{execute}}
 
-Clone the github repo to set up the enviroment, by running this command.
-`git clone https://github.com/Kubha99/katacoda-code.git`{{execute}}
 
-Go to the directory,
-`cd katacoda-code`{{execute}}
+## Creating the project from the scratch
+In this section we will go thorugh how to setup a Java project with gradle.
 
-## Unit tests
-We have already seen that a unit test was created for the initial app.
+Run the following command,
 
-Since there does not exist any functional logic in the application we will add two functions. The first function simpleAddition will be added in the math1 file. The second function simpleMultiplication will be added in the math2 file.
-Lets do that!
+`gradle init`{{execute}}
 
-<pre class="file" data-filename="./katacoda-code/app/src/main/java/tutorial/MathOne.java" data-target="insert"  data-marker="// Create simple Java class here">
-package tutorial;
+1. Select option 2, since we are going to be building an application with Java.
 
-public class MathOne{
+2. In the options section enter '3' for Java.
 
-  public int simpleAddition(int a, int b){
-    return a+b;
-  }
-}
-</pre>
+3. Enter 1 for groovy
 
-<pre class="file" data-filename="./katacoda-code/app/src/main/java/tutorial/MathTwo.java" data-target="insert"  data-marker="// Create simple Java class">
-package tutorial;
+5. In this tutorial we will be using JUnit Jupiter for Testing, Enter 4
 
-public class MathTwo{
+6. Enter Default
 
-  public int simpleMultiplication(int a, int b){
-    return a*b;
-  }
-}
-</pre>
+7. Enter Default
 
-Now lets add unit tests for testing this functionality,
 
-<pre class="file" data-filename="./katacoda-code/app/src/test/java/tutorial/AppTest.java" data-target="insert"  data-marker="// Add Unittest addition">
-@Test
-void simpleAdditionTest(){
-  MathOne math1 = new MathOne();
-  assertEquals(math1.simpleAddition(1,1), 2);
-}
-</pre>
+Note that these are the project setting we entered for this tutorial and can can be customized depending on the project that you want to use.
 
-<pre class="file" data-filename="./katacoda-code/app/src/test/java/tutorial/AppTest.java" data-target="insert"  data-marker="// Add unittest multiplication">
-@Test
-void simpleMultiplicationTest(){
-  MathTwo math2 = new MathTwo();
-  assertEquals(math2.simpleMultiplication(1,1), 1);
-}
-</pre>
+## Verifyin the project creation
 
-## Verify
-Lets verify that everything is working and the tests are good.
+You should now see that new folders have been created. We will go through some of the important ones.
+
+1. src/ - Contains the java application and the testNG for the project.
+
+2. `newProject/build.gradle`{{open}} - This is a groovy file that contains important information about gradle.
+If we examine this file we will find the dependencies that this project has and how these dependencies are resolved (mavenCentral). We can also see information about the test plattform.
+
+3. Gradlew.bat and gradlew - These are wrappers for Gradle for Windows or Linux/OS
+
+
+## Running the tests and application
+Now in order to verify that everything is working, examine the javafile under `newProject/src/main/java/newProject/App.java`{{open}}
+After that you should now see that this file will print a greeting if run, lets check it out by running it.
+
+`gradle run`{{execute}}
+
+Examine the test file which is located at `newProject/src/test/java/newProject/AppTest.java`{{open}},
+Lets run the tests,
 
 `gradle test`{{execute}}
-
-
-## Add Integration test
-In this section we will perform a integration test where we will have two seperate classes with different functionality and test that their integration is working correctly. The main java application App.java will then integrate the functionalites in both of them.
-
-These classes could be in different modules or components in a real life project, however to simplify it in our demo we only have two classes.
-
-Lets create the functionality of integration,
-<pre class="file" data-filename="./katacoda-code/app/src/main/java/tutorial/App.java" data-target="insert"  data-marker="// Add Integration functionality">
-public int squareSum(int a, int b){
-  MathOne m1 = new MathOne();
-  MathTwo m2 = new MathTwo();
-  return m2.simpleMultiplication(m1.simpleAddition(a,b),m1.simpleAddition(a,b));
-}
-</pre>
-
-Lets create the Integration test.
-
-<pre class="file" data-filename="./katacoda-code/app/src/test/java/tutorial/AppTest.java" data-target="insert"  data-marker="// Add Integration Test">
-@Test
-void simpleIntegrationTest(){
-  App app = new App();
-  assertEquals(app.squareSum(2,3), 25);
-}
-</pre>
-
-## Verify
-Lets verify that everything is working and the tests are good.
-
-`gradle test`{{execute}}
-
-Note: sometimes Katakoda acts weirdly, remove the codes under section Add integration test and manually copy paste them into file and it should work fine!

@@ -1,54 +1,98 @@
-# Creating CI pipeline with Github Actions
-In order to create the experience of automated testing we are going to set up a CI pipeline on github.
+# Adding Unit tests and Integration tests
+Now that we have concluded the functionality of being able to run, build and test the code we are going to add a few more tests.
 
-## Setting up the github Actions
-Setting up GitHub Actions is very simple. It uses a .yml file that describes the process for the github actions.
+## Setting up the enviroment
+In order to get best learning experience with Katacodas we need to reset the working enviroment for the oncomming assignments.
 
-The .yml file can be found under .github/workflows/gradle.yml,
+To do this go back to the root of the enviroment by run the following commands,
 
-go to the file `katacoda-code/.github/workflows/gradle.yml`{{open}}
+`cd `{{execute}}
 
-We will initilize the file by adding `on` tag which specifies what github events should trigger a process/workflow. In this case we want to perform a proccess (described later) on Pull Requests to main and for direct pushes to main.
-`runs-on` specifies which virtual machine to run on. Steps sets up the steps in a workflow, here we setup java JDK-18 and execute `gradle build` and `gradle test`.
+Clone the github repo to set up the enviroment, by running this command.
+`git clone https://github.com/Kubha99/katacoda-code.git`{{execute}}
 
+Go to the directory,
+`cd katacoda-code`{{execute}}
 
+## Unit tests
+We have already seen that a unit test was created for the initial app.
 
-Lets add that,
-<pre class="file" data-filename="./katacoda-code/.github/workflows/gradle.yml" data-target="insert"  data-marker="# Add On Tag">
-on:
-  push:
-    branches: [ main ]
-  pull_request:
-    branches: [ main ]
+Since there does not exist any functional logic in the application we will add two functions. The first function simpleAddition will be added in the math1 file. The second function simpleMultiplication will be added in the math2 file.
+Lets do that!
+
+<pre class="file" data-filename="./katacoda-code/app/src/main/java/tutorial/MathOne.java" data-target="insert"  data-marker="// Create simple Java class here">
+package tutorial;
+
+public class MathOne{
+
+  public int simpleAddition(int a, int b){
+    return a+b;
+  }
+}
 </pre>
 
-To automatically trigger workflows we use the keyword 'on'. In this case it trigger a workflow (will be specified later) on the push and pull request to the main branch.
+<pre class="file" data-filename="./katacoda-code/app/src/main/java/tutorial/MathTwo.java" data-target="insert"  data-marker="// Create simple Java class">
+package tutorial;
 
-Now, lets specify the workflow to be triggered. This is done under the Jobs section.
-We want to perform A build and test on github push and pull-request to main.
-Lets add it,
+public class MathTwo{
 
-<pre class="file" data-filename="./katacoda-code/.github/workflows/gradle.yml" data-target="insert"  data-marker="# Add Jobs">
-jobs:
-  build:
-
-    runs-on: ubuntu-latest
-
-    steps:
-    - uses: actions/checkout@v2
-    - name: Set up JDK 18
-      uses: actions/setup-java@v2
-      with:
-        java-version: '18'
-        distribution: 'temurin'
-    - name: Execute Build
-      run: gradle build
-    - name: Execute Tests
-      run: gradle test
+  public int simpleMultiplication(int a, int b){
+    return a*b;
+  }
+}
 </pre>
 
-In this we define a different jobs to be done, in this case build. For this jobs we define the steps and in the order that they need to be executed. We start by checking out the repository so that the workflow can access it. Then we set up JDK version 18 by using the setup command as well as specifying java-version and distribution. 
+Now lets add unit tests for testing this functionality,
 
-Now comes the more interesting part. Here we do two important steps. Namely the Execute of Build and Tests. Since we are using gradle and we know we have a script specified for it. We simply want it to run the gradle build and gradle test commands in the terminal.
+<pre class="file" data-filename="./katacoda-code/app/src/test/java/tutorial/AppTest.java" data-target="insert"  data-marker="// Add Unittest addition">
+@Test
+void simpleAdditionTest(){
+  MathOne math1 = new MathOne();
+  assertEquals(math1.simpleAddition(1,1), 2);
+}
+</pre>
 
-Done! You have now successfully created a Github Actions.
+<pre class="file" data-filename="./katacoda-code/app/src/test/java/tutorial/AppTest.java" data-target="insert"  data-marker="// Add unittest multiplication">
+@Test
+void simpleMultiplicationTest(){
+  MathTwo math2 = new MathTwo();
+  assertEquals(math2.simpleMultiplication(1,1), 1);
+}
+</pre>
+
+## Verify
+Lets verify that everything is working and the tests are good.
+
+`gradle test`{{execute}}
+
+
+## Add Integration test
+In this section we will perform a integration test where we will have two seperate classes with different functionality and test that their integration is working correctly. The main java application App.java will then integrate the functionalites in both of them.
+
+These classes could be in different modules or components in a real life project, however to simplify it in our demo we only have two classes.
+
+Lets create the functionality of integration,
+<pre class="file" data-filename="./katacoda-code/app/src/main/java/tutorial/App.java" data-target="insert"  data-marker="// Add Integration functionality">
+public int squareSum(int a, int b){
+  MathOne m1 = new MathOne();
+  MathTwo m2 = new MathTwo();
+  return m2.simpleMultiplication(m1.simpleAddition(a,b),m1.simpleAddition(a,b));
+}
+</pre>
+
+Lets create the Integration test.
+
+<pre class="file" data-filename="./katacoda-code/app/src/test/java/tutorial/AppTest.java" data-target="insert"  data-marker="// Add Integration Test">
+@Test
+void simpleIntegrationTest(){
+  App app = new App();
+  assertEquals(app.squareSum(2,3), 25);
+}
+</pre>
+
+## Verify
+Lets verify that everything is working and the tests are good.
+
+`gradle test`{{execute}}
+
+Note: sometimes Katakoda acts weirdly, remove the codes under section Add integration test and manually copy paste them into file and it should work fine!
