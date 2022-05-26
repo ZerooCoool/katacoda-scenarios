@@ -10,7 +10,7 @@ Move to that enviroment.
 
 
 ## Creating the project from the scratch
-In this section we will go thorugh how to setup a Java project with gradle.
+In this section we will go through how to setup a Java project with gradle.
 
 Run the following command,
 
@@ -29,9 +29,9 @@ Run the following command,
 7. Enter Default
 
 
-Note that these are the project setting we entered for this tutorial and can can be customized depending on the project that you want to use.
+Note that these are the project settings we entered for this tutorial, and they can be customized depending on the project that you want to do.
 
-## Verifyin the project creation
+## Verifying the project creation
 
 You should now see that new folders have been created. We will go through some of the important ones.
 
@@ -44,8 +44,9 @@ If we examine this file we will find the dependencies that this project has and 
 
 
 ## Running the tests and application
-Now in order to verify that everything is working, examine the javafile under `newProject/src/main/java/newProject/App.java`{{open}}
-After that you should now see that this file will print a greeting if run, lets check it out by running it.
+Now in order to verify that everything is working, examine the java file under `newProject/src/main/java/newProject/App.java`{{open}}
+
+After that you should now see that this file will print a greeting if run, lets check it out by running:
 
 `gradle run`{{execute}}
 
