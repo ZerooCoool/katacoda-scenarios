@@ -1,4 +1,5 @@
 # Using Maven Publish with Gradle
+In this final part of the tutorial we will explain how you would go about deploying your Gradle build artifact to a Maven repository. We will not actually add the code to the build file and deploy our build to a Maven repository, but give an overview of how it would be done if you have a maven repository. This is just to make you understand how Gradle can be combined with other tools.
 
 Gradle can be used in combination with Maven plugins to deploy build artifacts to a Maven repository. In this tutorial we will give an overview of how Maven works with gradle. To do this we need to include the Maven Publish Plugin in our `katacoda-code/app/build.gradle`{{open}} script.
 
@@ -64,3 +65,5 @@ publishing {
   }
 }
 </pre>
+
+That is how you would configure Gradle to publish artifacts to a Maven repository! You just configure your options in the publishing extension with your data and locations.
