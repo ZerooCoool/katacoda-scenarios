@@ -10,7 +10,7 @@ Automated testing & build goes hand in hand with CI/CD pipelines. When new code 
 * How to use Gradle with GitHub actions
 * Create unit and integration tests
 * Building a CI/CD pipeline
-* Deploying an artifact
+* Basics of how Gradle can be combined with other tools such as Maven
 
 # Prerequisities
 * Some prior knowledge in software testing
