@@ -16,6 +16,8 @@ publishing {
 
 script block in `katacoda-code/app/build.gradle`{{open}}.
 
+Within this script block we can add containers which are described and illustraded with scripts below, and configure our build.gradle file to publish an artifact to a Maven repository.
+
 
 # Maven Publication
 A Maven publication represents how Gradle publishes an artifact in Maven format. More specifically it represents a set of files and a POM. The publishing extenstion provides a container named `publications` where it can be configured in the
@@ -27,7 +29,7 @@ publishing {
 }
 </pre>
 
-script block in `katacoda-code/app/build.gradle`{{open}}. The publications are defined by the MavenPublication type mentioned earlier and are added as followed:
+script block in `katacoda-code/app/build.gradle`{{open}}. More specifically the publications are defined by the MavenPublication type mentioned earlier, and are added as followed:
 <pre>
 publishing {
   publications {
@@ -66,4 +68,6 @@ publishing {
 }
 </pre>
 
-That is how you would configure Gradle to publish artifacts to a Maven repository! You just configure your options in the publishing extension with your data and locations.
+So within these containers you enter which Maven repositories you will deploy your build to, and define the corresponding data and credentials needed.
+
+That is how you would configure Gradle to publish artifacts to a Maven repository! You just configure your options in the publishing extension. You can visit the links provided in this step for further reading on Maven extensions.
